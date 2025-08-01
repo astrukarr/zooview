@@ -2,12 +2,7 @@
 const config = {
   preset: "ts-jest",
   testEnvironment: "node",
-  roots: [
-    "<rootDir>/tests",
-    "<rootDir>/app",
-    "<rootDir>/data",
-    "<rootDir>/types",
-  ],
+  roots: ["<rootDir>/src"],
   testMatch: [
     "**/__tests__/**/*.{js,jsx,ts,tsx}",
     "**/?(*.)+(spec|test).{js,jsx,ts,tsx}",
@@ -17,12 +12,12 @@ const config = {
     "^.+\\.(ts|tsx)$": "ts-jest",
   },
   collectCoverageFrom: [
-    "app/**/*.{ts,tsx}",
-    "types/**/*.{ts,tsx}",
+    "src/app/**/*.{ts,tsx}",
+    "src/types/**/*.{ts,tsx}",
     "!**/*.d.ts",
   ],
   moduleNameMapper: {
-    "^@/(.*)$": "<rootDir>/$1",
+    "^@/(.*)$": "<rootDir>/src/$1",
   },
 };
 

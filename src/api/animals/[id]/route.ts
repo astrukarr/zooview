@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import fs from "fs";
 import path from "path";
-import { Animal } from "@/types/animal";
+import { Animal } from "@/src/types/animal";
 
 export async function GET(
   request: Request,
