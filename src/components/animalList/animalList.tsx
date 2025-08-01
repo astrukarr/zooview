@@ -4,6 +4,10 @@ import { useQuery } from "@tanstack/react-query";
 import AnimalCard from "./animalCard";
 import { Animal, AnimalsResponse } from "../../types/animal";
 
+type Props = {
+  query: string;
+  onInfoClick: (animal: Animal) => void;
+};
 async function fetchAnimals(): Promise<Animal[]> {
   const res = await fetch("/api/animals");
 
@@ -15,7 +19,7 @@ async function fetchAnimals(): Promise<Animal[]> {
   return data.data;
 }
 
-export default function AnimalList({ query }: { query: string }) {
+export default function AnimalList({ query, onInfoClick }: Props) {
   const {
     data: animals = [],
     isLoading,
@@ -56,7 +60,11 @@ export default function AnimalList({ query }: { query: string }) {
   return (
     <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 p-6">
       {filtered.map((animal) => (
-        <AnimalCard key={animal.id} animal={animal} />
+        <AnimalCard
+          key={animal.id}
+          animal={animal}
+          onInfoClick={() => onInfoClick(animal)}
+        />
       ))}
     </div>
   );

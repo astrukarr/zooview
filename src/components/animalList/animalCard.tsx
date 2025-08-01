@@ -1,17 +1,13 @@
 import { FiInfo } from "react-icons/fi";
 import AnimalInfoSection from "../animalInfoSection/animalInfoSection";
+import { Animal } from "@/src/types/animal";
 
-type Animal = {
-  id: number;
-  name: string;
-  species: string;
-  size: string;
-  prey: number[];
-  predators: number[];
-  color: string;
+type Props = {
+  animal: Animal;
+  onInfoClick?: () => void;
 };
 
-export default function AnimalCard({ animal }: { animal: Animal }) {
+export default function AnimalCard({ animal, onInfoClick }: Props) {
   return (
     <div className="bg-white rounded-xl border border-gray-200 p-4 flex flex-col justify-between">
       <div className="flex justify-between items-start">
@@ -26,7 +22,9 @@ export default function AnimalCard({ animal }: { animal: Animal }) {
           </div>
         </div>
         <div className="bg-gray-100 p-1 rounded-lg">
-          <FiInfo className="text-gray-800 h-4 w-4 cursor-pointer" />
+          <button onClick={onInfoClick}>
+            <FiInfo className="text-gray-800 h-4 w-4 cursor-pointer" />
+          </button>
         </div>
       </div>
 
