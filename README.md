@@ -1,42 +1,31 @@
-# 🧪 Nersio Demo Explorer
+# 🐾 AI Animal Explorer
 
-A **Next.js** web application for exploring a dummy AI-generated animal database with predator-prey relationships.
+A simple Next.js application for browsing a dummy AI-generated animal database with predator-prey relationships.
 
-This task is intended for **frontend engineers with 1–2 years of experience** in **Next.js** and **React.js**.  
-
-Estimated implementation time: **2-3 hours**.
+Built using React, Next.js, and React Query. Fully responsive and optimized for mobile.
 
 ---
 
-## 🎨 Design
+## API Endpoints
 
-Figma design file: [https://www.figma.com/design/hqsDhAZC3jetJAYrJ0Q2Ml/Nersio-Demo-Explorer?node-id=0-1&t=c3bq4HARcyt1kLVI-1](https://www.figma.com/design/hqsDhAZC3jetJAYrJ0Q2Ml/Nersio-Demo-Explorer?node-id=0-1&t=c3bq4HARcyt1kLVI-1)
-
-*Please follow the design as closely as possible.*
-
----
-
-## 🔗 API Endpoints
-
-- `GET /api/animals`  
-  → Fetch all animals
-
-- `GET /api/animals/{id}`  
-  → Fetch a single animal by ID
+- `GET /api/animals` – Fetch all animals
+- `GET /api/animals/{id}` – Fetch animal by ID
 
 ---
 
-## ✅ Implementation Rules
+## Tech Stack
 
-- Use already installed **@tanstack/react-query** for data fetching
-- Use **client components** only (`"use client"` in layouts, pages, and components)
-- The app must be **fully mobile-friendly**
-- **Search functionality** must be implemented on the **frontend**
-- Code should demonstrate:
-  - **Clean and organized structure**
-  - **Component reusability** and modularity
+- Next.js
+- React.js
+- @tanstack/react-query
+- TypeScript
+- Tailwind CSS
 
 ---
 
-Please focus on clarity, code quality, and a professional UI.  
-Feel free to ask if any requirements are unclear.
+## 📱 Features
+
+- Animal list and detail view
+- Predator-prey relationship visualization
+- Frontend search functionality
+- Responsive UI
