@@ -4,7 +4,7 @@ import path from "path";
 
 export async function GET() {
   try {
-    const filePath = path.join(process.cwd(), "data", "db.json");
+    const filePath = path.join(process.cwd(), "src", "data", "db.json");
     const fileContents = fs.readFileSync(filePath, "utf8");
     const animals = JSON.parse(fileContents);
 

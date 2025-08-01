@@ -26,7 +26,7 @@ export default function AnimalCard({ animal }: { animal: Animal }) {
           </div>
         </div>
         <div className="bg-gray-100 p-1 rounded-lg">
-          <FiInfo className="text-gray-800 h-4 w-4" />
+          <FiInfo className="text-gray-800 h-4 w-4 cursor-pointer" />
         </div>
       </div>
 
