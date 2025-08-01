@@ -10,7 +10,7 @@ export default function Home() {
     <main className="min-h-screen bg-gray-100 flex justify-center p-2">
       <div
         className="w-full bg-white rounded-xl shadow-md overflow-hidden flex flex-col"
-        style={{ height: "calc(100vh - 48px)" }}
+        style={{ height: "calc(100vh - 8px)" }}
       >
         <Header query={searchQuery} setQuery={setSearchQuery} />
         <div className="overflow-y-auto flex-grow">

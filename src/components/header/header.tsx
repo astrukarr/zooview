@@ -1,4 +1,7 @@
-import { FiSearch } from "react-icons/fi";
+"use client";
+import { useState } from "react";
+import DesktopSearchBar from "./desktopSearchBar";
+import MobileSearchBar from "./mobileSearchBar";
 
 type Props = {
   query: string;
@@ -6,20 +9,23 @@ type Props = {
 };
 
 export default function Header({ query, setQuery }: Props) {
-  return (
-    <header className="flex justify-between items-center px-6 py-4 bg-white border-b border-gray-200">
-      <h1 className="text-xl font-semibold text-black">Animal Finder</h1>
+  const [mobileSearchOpen, setMobileSearchOpen] = useState(false);
 
-      <div className="flex items-center sm:bg-gray-100 rounded-md px-3 py-2 w-64 max-sm:w-auto max-sm:p-0 max-sm:justify-center">
-        <input
-          type="text"
-          value={query}
-          onChange={(e) => setQuery(e.target.value)}
-          placeholder="Search"
-          className="bg-transparent outline-none flex-grow text-sm text-gray-700 placeholder-gray-400 max-sm:hidden"
-        />
-        <FiSearch className="text-gray-500 w-5 h-5" />
+  const toggleMobileSearch = () => setMobileSearchOpen((prev) => !prev);
+
+  return (
+    <header className="px-6 py-4 bg-white border-b border-gray-200 sm:flex sm:justify-between sm:items-center relative">
+      <div className="hidden sm:flex justify-between items-center w-full">
+        <h1 className="text-xl font-semibold text-black">Animal Finder</h1>
+        <DesktopSearchBar query={query} setQuery={setQuery} />
       </div>
+
+      <MobileSearchBar
+        query={query}
+        setQuery={setQuery}
+        isOpen={mobileSearchOpen}
+        toggle={toggleMobileSearch}
+      />
     </header>
   );
 }
