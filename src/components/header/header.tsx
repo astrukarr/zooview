@@ -7,7 +7,7 @@ type Props = {
 
 export default function Header({ query, setQuery }: Props) {
   return (
-    <header className="flex justify-between items-center px-6 py-4 bg-white rounded-t-md shadow">
+    <header className="flex justify-between items-center px-6 py-4 bg-white border-b border-gray-200">
       <h1 className="text-xl font-semibold text-black">Animal Finder</h1>
 
       <div className="flex items-center sm:bg-gray-100 rounded-md px-3 py-2 w-64 max-sm:w-auto max-sm:p-0 max-sm:justify-center">

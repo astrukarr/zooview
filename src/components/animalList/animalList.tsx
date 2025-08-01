@@ -1,6 +1,6 @@
 import AnimalCard from "./animalCard";
 
-const animals = Array.from({ length: 16 }, (_, i) => ({
+const animals = Array.from({ length: 24 }, (_, i) => ({
   id: i + 1,
   name: `Stella ${i + 1}`,
   species: "gnat",

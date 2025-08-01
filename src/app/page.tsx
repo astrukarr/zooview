@@ -8,9 +8,14 @@ export default function Home() {
 
   return (
     <main className="min-h-screen bg-gray-100 flex justify-center p-2">
-      <div className="w-full bg-white rounded-xl shadow-md">
+      <div
+        className="w-full bg-white rounded-xl shadow-md overflow-hidden flex flex-col"
+        style={{ height: "calc(100vh - 48px)" }}
+      >
         <Header query={searchQuery} setQuery={setSearchQuery} />
-        <AnimalList query={searchQuery} />
+        <div className="overflow-y-auto flex-grow">
+          <AnimalList query={searchQuery} />
+        </div>
       </div>
     </main>
   );
