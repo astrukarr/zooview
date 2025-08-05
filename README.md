@@ -1,4 +1,4 @@
-# 🐾 AI Animal Explorer
+# AI Animal Explorer
 
 A simple Next.js application for browsing a dummy AI-generated animal database with predator-prey relationships.
 
@@ -23,7 +23,7 @@ Built using React, Next.js, and React Query. Fully responsive and optimized for 
 
 ---
 
-## 📱 Features
+## Features
 
 - Animal list and detail view
 - Predator-prey relationship visualization

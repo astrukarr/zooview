@@ -2,15 +2,15 @@
 import Header from "../components/header/header";
 import AnimalList from "../components/animalList/animalList";
 import { useState } from "react";
-import AnimalDetailSidebar from "../components/animalDetailSidebar/animalDetailSidebar";
 import { Animal } from "../types/animal";
+import MainDetailWrapper from "../components/detailSidebar/mainDetailWrapper";
 
 export default function Home() {
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedAnimal, setSelectedAnimal] = useState<Animal | null>(null);
 
   return (
-    <main className="min-h-screen bg-gray-100 flex justify-center p-2">
+    <div className="min-h-screen bg-gray-100 flex justify-center p-2">
       <div className="w-full flex rounded-xl shadow-md overflow-hidden bg-white">
         <div
           className="flex flex-col flex-grow"
@@ -26,12 +26,12 @@ export default function Home() {
         </div>
 
         {selectedAnimal && (
-          <AnimalDetailSidebar
+          <MainDetailWrapper
             animal={selectedAnimal}
             onClose={() => setSelectedAnimal(null)}
           />
         )}
       </div>
-    </main>
+    </div>
   );
 }

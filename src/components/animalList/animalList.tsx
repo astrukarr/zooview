@@ -2,22 +2,13 @@
 
 import { useQuery } from "@tanstack/react-query";
 import AnimalCard from "./animalCard";
-import { Animal, AnimalsResponse } from "../../types/animal";
+import { Animal } from "../../types/animal";
+import { getAllAnimals } from "@/src/lib/api/getAllAnimals";
 
 type Props = {
   query: string;
   onInfoClick: (animal: Animal) => void;
 };
-async function fetchAnimals(): Promise<Animal[]> {
-  const res = await fetch("/api/animals");
-
-  if (!res.ok) {
-    throw new Error("Failed to fetch animals");
-  }
-
-  const data: AnimalsResponse = await res.json();
-  return data.data;
-}
 
 export default function AnimalList({ query, onInfoClick }: Props) {
   const {
@@ -26,7 +17,7 @@ export default function AnimalList({ query, onInfoClick }: Props) {
     isError,
   } = useQuery<Animal[]>({
     queryKey: ["animals"],
-    queryFn: fetchAnimals,
+    queryFn: getAllAnimals,
   });
 
   const filtered = animals.filter((a) =>
@@ -52,7 +43,7 @@ export default function AnimalList({ query, onInfoClick }: Props) {
   if (filtered.length === 0) {
     return (
       <div className="p-8 text-center text-gray-500 text-lg">
-        No results found for "<span className="italic">{query}</span>"
+        No results found for <span className="italic">"{query}"</span>
       </div>
     );
   }
